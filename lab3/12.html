@@ -55,12 +55,10 @@
             </tr>
         </thead>
         <tbody id="movieTableBody">
-            <!-- Content will be inserted here -->
         </tbody>
     </table>
 
     <script>
-        // Mock movie data
         const mockMovies = [
             {
                 id: 1,
@@ -111,11 +109,9 @@
                 actors: ["Matthew McConaughey", "Anne Hathaway", "Jessica Chastain"]
             }
         ];
-
-        // Function to load data on page load
         function loadMovies() {
             const tbody = document.getElementById('movieTableBody');
-            tbody.innerHTML = ''; // Clear previous content if any
+            tbody.innerHTML = ''; 
 
             mockMovies.forEach(movie => {
                 const row = document.createElement('tr');
@@ -134,8 +130,6 @@
                 tbody.appendChild(row);
             });
         }
-
-        // Call the function when the page loads
         window.onload = loadMovies;
     </script>
 </body>
