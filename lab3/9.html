@@ -64,8 +64,6 @@
             $("#registrationForm").submit(function (event) {
                 event.preventDefault();
                 let valid = true;
-
-                // Name Validation
                 const name = $("#name").val();
                 if (!name || /\d/.test(name)) {
                     $("#nameError").text("Name cannot be empty or contain numbers.");
@@ -73,8 +71,6 @@
                 } else {
                     $("#nameError").text("");
                 }
-
-                // Address Validation
                 const address = $("#address").val();
                 if (!address) {
                     $("#addressError").text("Address cannot be empty.");
@@ -82,8 +78,6 @@
                 } else {
                     $("#addressError").text("");
                 }
-
-                // Username Validation
                 const username = $("#username").val();
                 if (!username || /\s|[^a-zA-Z0-9_]/.test(username)) {
                     $("#usernameError").text("Username cannot be empty, contain spaces, or special characters except underscore.");
@@ -91,8 +85,6 @@
                 } else {
                     $("#usernameError").text("");
                 }
-
-                // Email Validation
                 const email = $("#email").val();
                 if (!email || !/@/.test(email)) {
                     $("#emailError").text("Email cannot be empty and must include '@'.");
@@ -100,8 +92,6 @@
                 } else {
                     $("#emailError").text("");
                 }
-
-                // Password Validation
                 const password = $("#password").val();
                 if (!password || !/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}/.test(password)) {
                     $("#passwordError").text("Password must be at least 8 characters long, include one uppercase, one lowercase, one digit, and one special character.");
@@ -109,8 +99,6 @@
                 } else {
                     $("#passwordError").text("");
                 }
-
-                // Phone Validation
                 const phone = $("#phone").val();
                 if (!phone || !/^(98|97|96)\d{8}$/.test(phone)) {
                     $("#phoneError").text("Phone must start with 98, 97, or 96 and contain only 10 digits.");
@@ -118,16 +106,12 @@
                 } else {
                     $("#phoneError").text("");
                 }
-
-                // Gender Validation
                 if (!$("input[name='gender']:checked").val()) {
                     $("#genderError").text("Please select your gender.");
                     valid = false;
                 } else {
                     $("#genderError").text("");
                 }
-
-                // Course Selection Validation
                 const course = $("#course").val();
                 if (!course) {
                     $("#courseError").text("Please select a course.");
